@@ -16,6 +16,7 @@ export default async function HomePage() {
   return (
     <>
       <Navbar language={lang} />
+
       <Introductions language={lang} />
       <Features language={lang} />
       <Overview language={lang} />
