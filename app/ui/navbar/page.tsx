@@ -16,11 +16,11 @@ import menu from './icons/menu.svg'
 
 function Navbar({ language }: any) {
 
-    const router = useRouter()
     const lang = language === "En" ? En : Fa
     const span = useRef<HTMLSpanElement>(null)
     const buttons_container = useRef<HTMLDivElement>(null)
     const nav = useAppSelector(state => state.general.navbar)
+    const dashboard = useAppSelector(state => state.general.dashboard)
     const dispatch = useAppDispatch()
     const container = useRef<HTMLDivElement>(null)
 
@@ -165,7 +165,7 @@ function Navbar({ language }: any) {
                     </button>
                     <span ref={span}></span>
                     <div>
-                        <button onClick={() => Change_Link('dashboard')} id='login' className='navbar_links_login'>
+                        <button onClick={() => Change_Link_Entirely(dashboard)} id='login' className='navbar_links_login'>
                             {lang.links.login}
                         </button>
                     </div>
@@ -206,7 +206,7 @@ function Navbar({ language }: any) {
                     </button>
                     <span ref={span}></span>
                     <div>
-                        <button onClick={() => Change_Link('dashboard')} id='login' className='navbar_links_login'>
+                        <button onClick={() => Change_Link_Entirely(dashboard)} id='login' className='navbar_links_login'>
                             {lang.links.login}
                         </button>
                     </div>

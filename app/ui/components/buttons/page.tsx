@@ -3,16 +3,16 @@
 import { useEffect, useRef } from 'react'
 import './style.css'
 
-interface props {
-    children: never
-    className?: string
-    callback?: (x: React.MouseEvent) => void
-}
 // interface props {
-//     children: React.ReactNode
+//     children: never
 //     className?: string
 //     callback?: (x: React.MouseEvent) => void
 // }
+interface props {
+    children: React.ReactNode
+    className?: string
+    callback?: (x: React.MouseEvent) => void
+}
 
 function Anim_Button({ children, className, callback }: props) {
 
