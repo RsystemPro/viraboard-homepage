@@ -1,4 +1,3 @@
-import { StaticImageData } from "next/image";
 
 export function getCookie(name: string): any | null {
     const cDecoded = decodeURIComponent(document.cookie);
@@ -13,6 +12,13 @@ export function getCookie(name: string): any | null {
         }
     })
     return result;
+}
+
+export function setCookie(name:string, value: string, daysToLive:number){
+    const date = new Date();
+    date.setTime(date.getTime() +  (daysToLive * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + date.toUTCString();
+    document.cookie = `${name}=${value}; ${expires}; path=/`
 }
 
 export const preLoadImage = (url: string) => {

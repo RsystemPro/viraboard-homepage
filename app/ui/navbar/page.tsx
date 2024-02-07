@@ -6,7 +6,7 @@ import En from '@/app/lib/dictionaries/en'
 import Fa from '@/app/lib/dictionaries/fa'
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import Image from 'next/image'
-import { Change_Link, getCookie } from '@/app/lib/_tools/tools'
+import { Change_Link, Change_Link_Entirely, getCookie, setCookie } from '@/app/lib/_tools/tools'
 import { useRouter } from 'next/navigation'
 import { NextResponse } from 'next/server'
 import { useAppDispatch, useAppSelector } from '@/app/lib/toolkit/tsHook'
@@ -58,12 +58,17 @@ function Navbar({ language }: any) {
     function SpanMover(x: React.MouseEvent) {
 
         const target = x.target as HTMLButtonElement
-        const target_width = target?.getBoundingClientRect().width
-        const target_left = target?.offsetLeft
+        const textContent = target.id as nav | 'language'
+
+        if (textContent === 'language') {
+            const chamgeLang = language === 'En' ? 'Fa' : 'En'
+            setCookie('lang', chamgeLang, 365)
+            Change_Link_Entirely('/')
+            return
+        }
 
         dispatch(setNavbar(target.id as nav))
 
-        const textContent = target.id as nav
         let find_page
         switch (textContent) {
             case 'introduction':
@@ -99,26 +104,27 @@ function Navbar({ language }: any) {
     const containerp = useRef<HTMLDivElement>(null)
     const container_items = useRef<HTMLDivElement>(null)
     const container_logo = useRef<HTMLDivElement>(null)
-    const [isOpen, setIsOpen] = useState<boolean>(false)
+    // const [isOpen, setIsOpen] = useState<boolean>(false)
+    let isOpen = false
 
     //Components
     const Mobile_Navbar = useCallback((...props: any) => {
 
         function Open() {
             const items = container_items.current as HTMLDivElement
-            const containerr = container.current as HTMLDivElement
+            const containerr = containerp.current as HTMLDivElement
             const logo = container_logo.current as HTMLDivElement
 
             const items_height = items.getBoundingClientRect().height
             const container_height = containerr.getBoundingClientRect().height
 
             if (isOpen) {
-                setIsOpen(false)
+                isOpen = false
                 containerr.classList.remove('navbar_blur')
                 containerr.style.height = '65px'
                 logo.style.opacity = '0'
             } else {
-                setIsOpen(true)
+                isOpen = true
                 containerr.classList.add('navbar_blur')
                 containerr.style.height = (items_height + container_height) + 'px'
                 logo.style.opacity = '1'
@@ -153,6 +159,9 @@ function Navbar({ language }: any) {
                     </button>
                     <button id='about' onClick={SpanMover}>
                         {lang.links.about}
+                    </button>
+                    <button id='language' onClick={SpanMover}>
+                        {language === 'En' ? 'فارسی' : 'English'}
                     </button>
                     <span ref={span}></span>
                     <div>
@@ -191,6 +200,9 @@ function Navbar({ language }: any) {
                     </button>
                     <button id='about' onClick={SpanMover}>
                         {lang.links.about}
+                    </button>
+                    <button id='language' onClick={SpanMover}>
+                        {language === 'En' ? 'فارسی' : 'English'}
                     </button>
                     <span ref={span}></span>
                     <div>
