@@ -1,4 +1,4 @@
-export default {
+const Fa = {
   links: {
     logo: "ایبورد",
     introduction: "معرفی",
@@ -82,3 +82,4 @@ export default {
   }
 }
 
+export default Fa;

@@ -8,7 +8,7 @@ import './style.css';
 import En from '@/app/lib/dictionaries/en'
 import Fa from '@/app/lib/dictionaries/fa'
 import Profile_3d from "../../components/profile_3d/page"
-import myPix from './data/42kb.jpg';
+import myPix from './data/myPic.jpg';
 import female from './data/femal.jpg';
 import male from './data/male.jpg';
 import boss from './data/boss.jpg';
@@ -50,7 +50,7 @@ function Team({ language: lang }: props) {
         <motion.div ref={container} className="team_container" style={{ opacity }}>
             <div className="card_container">
                 <Profile_3d
-                    picture={myPix}
+                    picture={myPix.src}
                     title={language.team.reza_name}
                     text={language.team.reza_career}
                     cover_color="#f9f1f1"

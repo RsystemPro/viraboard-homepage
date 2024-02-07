@@ -22,7 +22,6 @@ function Navbar({ language }: any) {
     const buttons_container = useRef<HTMLDivElement>(null)
     const nav = useAppSelector(state => state.general.navbar)
     const dispatch = useAppDispatch()
-    const [navBlur, setNavBlur] = useState<boolean>(false)
     const container = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
@@ -34,9 +33,6 @@ function Navbar({ language }: any) {
         })
 
         const mySpan = span.current as HTMLSpanElement
-        const firstButton = document.querySelector('.navbar_links_container button')
-        const firstButton_width = firstButton?.getBoundingClientRect().width
-        const firstButton_left = firstButton?.clientLeft
 
         setTimeout(() => {
             mySpan.style.opacity = '1';
@@ -100,13 +96,13 @@ function Navbar({ language }: any) {
         }
     }
 
-    //Components
-    const Mobile_Navbar = useCallback(() => {
+    const containerp = useRef<HTMLDivElement>(null)
+    const container_items = useRef<HTMLDivElement>(null)
+    const container_logo = useRef<HTMLDivElement>(null)
+    const [isOpen, setIsOpen] = useState<boolean>(false)
 
-        const container = useRef<HTMLDivElement>(null)
-        const container_items = useRef<HTMLDivElement>(null)
-        const container_logo = useRef<HTMLDivElement>(null)
-        const [isOpen, setIsOpen] = useState<boolean>(false)
+    //Components
+    const Mobile_Navbar = useCallback((...props: any) => {
 
         function Open() {
             const items = container_items.current as HTMLDivElement
@@ -131,7 +127,7 @@ function Navbar({ language }: any) {
         }
 
         return (
-            <div ref={container} className='navbar_container_mobile'>
+            <div ref={containerp} className='navbar_container_mobile'>
                 <div className='ncm_logo'>
                     <div ref={container_logo}>
                         <Image alt='navbar_logo' src={logo} />

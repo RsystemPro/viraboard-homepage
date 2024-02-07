@@ -86,7 +86,7 @@ function Profile_3d(props: props) {
         >
             {/* Front */}
             <div className='profile_3d_image'>
-                <Image src={picture} alt='pic' />
+                <Image fill={true} src={picture} alt='pic' />
                 <div>
                     <h1>{title}</h1>
                     <h2>{text}</h2>

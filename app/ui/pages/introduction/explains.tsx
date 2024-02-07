@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from "react";
-import { Anim_Button, D3_Button } from "../../components/buttons/page";
+import Anim_Button from "../../components/buttons/page";
 import En from '@/app/lib/dictionaries/en'
 import Fa from '@/app/lib/dictionaries/fa'
 import { MotionValue, motion } from "framer-motion"

@@ -1,28 +1,41 @@
 'use client'
 
-import { ReactNode } from 'react';
+import { useEffect, useRef } from 'react'
 import './style.css'
 
-interface anim {
-    children: ReactNode
-    className?: any
-    callback?: (x: any) => void
+interface props {
+    children: never
+    className?: string
+    callback?: (x: React.MouseEvent) => void
 }
+// interface props {
+//     children: React.ReactNode
+//     className?: string
+//     callback?: (x: React.MouseEvent) => void
+// }
 
-export function Anim_Button({ children, className, callback }: anim) {
+function Anim_Button({ children, className, callback }: props) {
+
+    const container = useRef<HTMLButtonElement>(null)
+
+    useEffect(() => {
+        className && container.current?.classList.add(className)
+    }, [])
 
     return (
-        <button onClick={callback} className={'anim_button ' + className}>{children}</button>
+        <button ref={container} onClick={callback} className={'anim_button'}>{children || ''}</button>
     );
 }
 
-export function D3_Button({ children }: { children: ReactNode }) {
-    return (
-        <button className='d3_button'>
-            <span></span>
-            {children}
-            <span></span>
-            <span></span>
-        </button>
-    );
-}
+export default Anim_Button;
+
+// export function D3_Button({ children }: { children: ReactNode }) {
+//     return (
+//         <button className='d3_button'>
+//             <span></span>
+//             {children}
+//             <span></span>
+//             <span></span>
+//         </button>
+//     );
+// }

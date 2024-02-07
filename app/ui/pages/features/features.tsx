@@ -19,14 +19,13 @@ function FeaturesList({ lang, scroll }: props) {
     const h6Container = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        if (lang === 'En') {
+        if (lang && lang === 'En') {
             const children = (h6Container.current as HTMLDivElement).children
             for (const i of children) {
                 const h6 = i as HTMLHeadingElement
                 h6.style.fontFamily = 'sans-serif'
             }
         }
-
     }, [])
 
     useMotionValueEvent(scroll, "change", (latest) => {

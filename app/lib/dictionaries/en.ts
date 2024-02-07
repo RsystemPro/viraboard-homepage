@@ -1,4 +1,4 @@
-export default {
+const En = {
   links: {
     logo: "e-Board",
     introduction: "Introduction",
@@ -81,3 +81,5 @@ export default {
     unlimit: 'Unlimited'
   }
 }
+
+export default En
