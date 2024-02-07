@@ -1,0 +1,299 @@
+.profile_3d {
+  --color1: #1c4cf8;
+  --color2: #4c72fa;
+  --color3: #849efd;
+  --sizeW: 100%;
+  --sizeH: 100%;
+  --radius: 1rem;
+  --depth: 30px;
+  border: none;
+  outline: none;
+  position: relative;
+  width: var(--sizeW);
+  height: var(--sizeH);
+  border-radius: var(--radius);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  background-color: var(--color2);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.5s, scale 0.4s, opacity 0.1s, scale 0.5s;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+}
+.profile_3d:hover {
+  scale: 1.1;
+}
+.profile_3d span:nth-of-type(1) {
+  border-radius: var(--radius);
+  width: var(--sizeW);
+  height: var(--sizeH);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  transform: translateZ(-1px);
+  pointer-events: none;
+  background-color: var(--color3);
+  z-index: 2;
+}
+.profile_3d span:nth-of-type(2) {
+  border-radius: var(--radius);
+  width: var(--sizeW);
+  height: var(--sizeH);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  transform: translateZ(calc(-1 * var(--depth)));
+  background-color: var(--color2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profile_3d span:nth-of-type(3) {
+  border-radius: var(--radius);
+  width: var(--sizeW);
+  height: var(--sizeH);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  transform: translateZ(calc(1px + -1 * var(--depth)));
+  pointer-events: none;
+  background-color: var(--color3);
+}
+.profile_3d span:nth-of-type(4) {
+  position: absolute;
+  top: 0;
+  left: calc(var(--sizeW) / 2);
+  width: var(--depth);
+  height: 100%;
+  z-index: 10;
+  transform: rotateY(90deg) translateX(calc(var(--depth) / 2));
+  background-color: rgb(0, 110, 255);
+  pointer-events: none;
+  background-color: var(--color3);
+}
+.profile_3d span:nth-of-type(5) {
+  position: absolute;
+  top: calc(var(--sizeH) / 2);
+  left: 0;
+  width: 100%;
+  height: var(--depth);
+  z-index: 10;
+  transform: rotateX(90deg) translateY(calc(-1 * var(--depth) / 2));
+  background-color: rgb(0, 110, 255);
+  pointer-events: none;
+  background-color: var(--color3);
+}
+.profile_3d span:nth-of-type(6) {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 90%;
+  height: var(--depth);
+  background-color: var(--color3);
+  z-index: 10;
+  transform: rotateX(-90deg);
+  pointer-events: none;
+  transform-origin: top;
+}
+.profile_3d span:nth-of-type(7) {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: var(--depth);
+  background-color: var(--color3);
+  z-index: 10;
+  transform: rotateX(90deg);
+  pointer-events: none;
+  transform-origin: bottom;
+}
+
+.profile_3d_image {
+  width: 100%;
+  height: 70%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: linear-gradient(#d896ff, #4d1b7b);
+}
+.profile_3d_image img {
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.profile_3d_image div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: -32px;
+  width: 100%;
+}
+.profile_3d_image div img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  opacity: 1;
+}
+.profile_3d_image div h1 {
+  color: white;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+.profile_3d_image div h2 {
+  color: white;
+  font-weight: normal;
+  font-size: 0.8rem;
+}
+
+.profile_3d_description {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+.profile_3d_description h3 {
+  font-size: 0.7rem;
+  color: gray;
+}
+.profile_3d_description h4 {
+  font-size: 0.7rem;
+  color: gray;
+  font-weight: bold;
+  color: black;
+}
+
+.profile_3d_back {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: scale(-1, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.profile_3d_back h6 {
+  font-size: 0.7rem;
+}
+.profile_3d_back img {
+  align-self: center;
+  width: 50px;
+  height: 50px;
+}
+.profile_3d_back .profile_3d_icons {
+  transform: scale(-1, 1);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+.profile_3d_back .profile_3d_icons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile_3d_back .profile_3d_icons img {
+  align-self: center;
+  transition: all 0.2s;
+  transform: scale(-1, 1);
+  width: 50px;
+  height: 50px;
+  object-fit: fill;
+}
+.profile_3d_back .profile_3d_icons img:hover {
+  scale: 1.3;
+}
+.profile_3d_back .profile_3d_icons div:nth-of-type(2) img {
+  padding: 0.4rem;
+}
+.profile_3d_back .profile_3d_icons div:nth-of-type(1) img {
+  padding: 0.4rem;
+}
+.profile_3d_back .profile_3d_icons div:nth-of-type(5) img {
+  padding: 0.1rem;
+}
+.profile_3d_back .profile_3d_icons div:nth-of-type(4) img {
+  padding: 0.1rem;
+}
+.profile_3d_back .profile_3d_description_back {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  border-radius: 0 0 var(--radius) var(--radius);
+  overflow: hidden;
+}
+.profile_3d_back .profile_3d_description_back img {
+  position: absolute;
+  top: -25px;
+}
+.profile_3d_back .profile_3d_description_back .dbd {
+  padding-block: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 8px;
+}
+.profile_3d_back .profile_3d_description_back h3 {
+  font-size: 0.7rem;
+  color: gray;
+}
+.profile_3d_back .profile_3d_description_back h4 {
+  font-size: 0.7rem;
+  color: gray;
+  font-weight: bold;
+  color: black;
+}
+.profile_3d_back .profile_3d_header {
+  background: linear-gradient(#d896ff, #4d1b7b);
+  width: 100%;
+  height: 20%;
+  background-color: white;
+  border-radius: var(--radius) var(--radius) 0 0;
+  opacity: 0.5;
+}
+.profile_3d_back .profile_3d_header h1 {
+  color: white;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+.profile_3d_back .profile_3d_header h2 {
+  color: white;
+  font-weight: normal;
+  font-size: 0.8rem;
+}

@@ -1,0 +1,13 @@
+@import '../mixins';
+
+.pages_layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include Mobile {
+        // margin-top: 0px;
+    }
+
+}

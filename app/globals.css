@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  background-color: white;
+  /* height: 400vh; */
+  overflow-x: hidden;
+}
+
+body {
+  /* background-color: lightgray; */
+}
+
+@font-face {
+  font-family: vazirmatn;
+  font-style: normal;
+  font-weight: 300;
+  src: url("./lib/fonts/Vazirmatn-FD-Regular-35740bc0.woff2") format("woff2"),
+    url("./lib/fonts/Vazirmatn-FD-Regular-f9387e59.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: vazirmatn;
+  font-style: normal;
+  font-weight: 500;
+  src: url("./lib/fonts/Vazirmatn-FD-Medium-cfecf151.woff2") format("woff2"),
+    url("./lib/fonts/Vazirmatn-FD-Medium-0547cd71.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: vazirmatn;
+  font-style: normal;
+  font-weight: 700;
+  src: url("./lib/fonts/Vazirmatn-FD-SemiBold-484fad63.woff2") format("woff2"),
+    url("./lib/fonts/Vazirmatn-FD-SemiBold-eddf8788.ttf") format("truetype")
+}

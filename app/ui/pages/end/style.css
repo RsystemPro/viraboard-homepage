@@ -1,0 +1,127 @@
+.end_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 3rem;
+  height: 60vh;
+  gap: 3rem;
+  position: relative;
+  overflow: hidden;
+  direction: ltr;
+}
+.end_container img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1vh;
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+.end_container div {
+  width: max-content;
+  height: 100%;
+  z-index: 10;
+}
+.end_container .end_social {
+  width: 30%;
+  text-align: center;
+  color: white;
+  font-family: vazirmatn;
+}
+.end_container .end_social div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+}
+.end_container .end_social div img {
+  position: relative;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.end_container .end_social div img:nth-of-type(2) {
+  padding: 5px;
+}
+.end_container .end_social div img:nth-of-type(3) {
+  padding: 5px;
+}
+.end_container .end_social h1 {
+  margin-bottom: 1rem;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+.end_container .end_quick {
+  width: 30%;
+  text-align: center;
+  color: white;
+  font-family: vazirmatn;
+}
+.end_container .end_quick h1 {
+  margin-bottom: 1rem;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+.end_container .end_quick h2 {
+  cursor: pointer;
+  font-weight: lighter;
+}
+.end_container .end_explain {
+  width: 30%;
+  text-align: center;
+  color: white;
+  font-family: vazirmatn;
+}
+.end_container .end_explain h1 {
+  margin-bottom: 1rem;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+.end_container .end_explain h2 {
+  font-weight: lighter;
+}
+@media screen and (max-width: 576px) {
+  .end_container {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+    gap: 0.5rem;
+  }
+  .end_container h1 {
+    font-size: 0.5vw;
+  }
+  .end_container .end_social {
+    width: 100%;
+  }
+  .end_container .end_social h1 {
+    font-size: 5vw;
+  }
+  .end_container .end_social h2 {
+    font-size: 3vw;
+  }
+  .end_container .end_quick {
+    width: 100%;
+  }
+  .end_container .end_quick h1 {
+    font-size: 5vw;
+  }
+  .end_container .end_quick h2 {
+    font-size: 3vw;
+  }
+  .end_container .end_explain {
+    width: 100%;
+  }
+  .end_container .end_explain h1 {
+    font-size: 5vw;
+  }
+  .end_container .end_explain h2 {
+    font-size: 3vw;
+  }
+}
