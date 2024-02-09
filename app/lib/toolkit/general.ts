@@ -12,7 +12,7 @@ interface IS {
 
 const initialState: IS = {
     server: "http://192.168.43.180:3001",
-    dashboard: "http://eboard-dashboard.vercel.app",
+    dashboard: "https://eboard-dashboard.vercel.app",
     language: null,
     navbar: 'introduction'
 }
