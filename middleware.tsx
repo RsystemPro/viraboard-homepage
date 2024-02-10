@@ -7,7 +7,7 @@ export function middleware(request: NextRequest) {
     //create cookie
     let lang: language = null
     lang = request.cookies.get('lang')?.value as language || null
-    if (!lang) lang = 'En';
+    if (!lang) lang = 'Fa';
 
     //create header
     const newRequestHeaders = new Headers(request.headers)
