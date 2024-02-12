@@ -15,7 +15,7 @@ interface props {
     children: ReactNode[]
 }
 
-function TW_Carousel({ direction = 'ltr', children }: props) {
+function TW_Carousel({ direction = 'ltr', children }: any) {
     return (
         <>
             <Swiper
@@ -34,7 +34,7 @@ function TW_Carousel({ direction = 'ltr', children }: props) {
                 dir={direction}
             >
                 {
-                    children && children.map((x, y) => <SwiperSlide key={y} >{x}</SwiperSlide>)
+                    children && children.map((x:any, y:number) => <SwiperSlide key={y} >{x}</SwiperSlide>)
                 }
             </Swiper>
         </>

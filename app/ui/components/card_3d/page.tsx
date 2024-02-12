@@ -16,7 +16,7 @@ interface props {
     buttonText?: string
 }
 
-function Card_3d(props: props) {
+function Card_3d(props: any) {
 
     const { cover_color, inside_color, style, className, picture, type, price, options, buttonText, hoverStyles } = props;
 
@@ -59,7 +59,7 @@ function Card_3d(props: props) {
             <h5>{type}</h5>
             <h5>{price}</h5>
             <div>
-                {options && options?.length > 0 && options.map((x, y) => <h6 key={y}>{x}</h6>)}
+                {options && options?.length > 0 && options.map((x:any, y:number) => <h6 key={y}>{x}</h6>)}
             </div>
             <button onClick={Button_Click}>{buttonText}</button>
 

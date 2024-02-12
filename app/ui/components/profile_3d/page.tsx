@@ -33,7 +33,7 @@ interface props {
     back_text2?: string
 }
 
-function Profile_3d(props: props) {
+function Profile_3d(props: any) {
 
     const { title, text, cover_color, inside_color, style, className, picture, hoverStyles, level_q, level, experience_q, experience, projects_q, projects, back_text1, back_text2 } = props;
 

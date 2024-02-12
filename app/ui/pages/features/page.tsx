@@ -14,7 +14,7 @@ interface props {
     language: language
 }
 
-function Features({ language }: props) {
+function Features({ language }: any) {
     const container = useRef<HTMLDivElement>(null)
     const dispatch = useAppDispatch()
     const [opacity, setOpacity] = useState<number>(0)

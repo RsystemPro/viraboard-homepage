@@ -18,7 +18,7 @@ interface props {
     language: language
 }
 
-function Prices({ language: lang }: props) {
+function Prices({ language: lang }: any) {
 
     const container = useRef<HTMLDivElement>(null)
     const dispatch = useAppDispatch()

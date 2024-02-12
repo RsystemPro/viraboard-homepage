@@ -6,7 +6,7 @@ import En from '@/app/lib/dictionaries/en'
 import Fa from '@/app/lib/dictionaries/fa'
 import './style.css'
 
-function Logo_Loading({ language }: { language: 'En' | 'Fa' | null }) {
+function Logo_Loading({ language }: any) {
 
     const lang = language === "En" ? En : Fa
 

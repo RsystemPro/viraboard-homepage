@@ -19,7 +19,7 @@ interface props {
     language: language
 }
 
-function Team({ language: lang }: props) {
+function Team({ language: lang }: any) {
 
     const container = useRef<HTMLDivElement>(null)
     const dispatch = useAppDispatch()

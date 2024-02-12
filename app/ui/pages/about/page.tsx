@@ -10,11 +10,11 @@ import './style.css';
 import Image from "next/image"
 import contactUs_pic from './data/contactUs.svg'
 
-interface props {
-    language: language
-}
+// interface props {
+//     language: language
+// }
 
-function About({ language: lang }: props) {
+function About({ language: lang }: any) {
 
     const container = useRef<HTMLDivElement>(null)
     const dispatch = useAppDispatch()

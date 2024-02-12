@@ -16,7 +16,7 @@ interface props {
     language: language
 }
 
-function Introductions({ language }: props) {
+function Introductions({ language }: any) {
 
     const container = useRef<HTMLDivElement>(null)
     const [imageLoaded, setImageLoaded] = useState<boolean>(false)

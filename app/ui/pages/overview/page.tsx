@@ -19,7 +19,7 @@ interface props {
     language: language
 }
 
-function Overview({ language: lang }: props) {
+function Overview({ language: lang }: any) {
 
     const container = useRef<HTMLDivElement>(null)
     const dispatch = useAppDispatch()

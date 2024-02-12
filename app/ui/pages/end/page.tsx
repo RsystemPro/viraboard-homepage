@@ -18,7 +18,7 @@ interface props {
     language: language
 }
 
-function End({ language: lang }: props) {
+function End({ language: lang }: any) {
 
     const container = useRef<HTMLDivElement>(null)
     const dispatch = useAppDispatch()

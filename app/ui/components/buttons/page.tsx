@@ -3,24 +3,19 @@
 import { useEffect, useRef } from 'react'
 import './style.css'
 
-// interface props {
-//     children: never
-//     className?: string
-//     callback?: (x: React.MouseEvent) => void
-// }
-interface props {
+export interface props {
     children: React.ReactNode
     className?: string
     callback?: (x: React.MouseEvent) => void
 }
 
-function Anim_Button({ children, className, callback }: props) {
+function Anim_Button({ children, className, callback }: any) {
 
     const container = useRef<HTMLButtonElement>(null)
 
     useEffect(() => {
         className && container.current?.classList.add(className)
-    }, [])
+    }, [className])
 
     return (
         <button ref={container} onClick={callback} className={'anim_button'}>{children || ''}</button>
