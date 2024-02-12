@@ -25,6 +25,8 @@ function Team({ language: lang }: props) {
     const dispatch = useAppDispatch()
     const [opacity, setOpacity] = useState(0)
     const [device, setDevice] = useState<any>()
+    const [h3Opacity, seth3Opacity] = useState<number>(0)
+
     const language = lang === "En" ? En : Fa
 
     useEffect(() => {
@@ -38,6 +40,7 @@ function Team({ language: lang }: props) {
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         const value = scrollYProgress.get()
+        seth3Opacity(value * 2)
         if (value > .4 && value < 0.6) {
             dispatch(setNavbar('team'))
         }
@@ -48,74 +51,77 @@ function Team({ language: lang }: props) {
 
     return (
         <motion.div ref={container} className="team_container" style={{ opacity }}>
-            <div className="card_container">
-                <Profile_3d
-                    picture={myPix.src}
-                    title={language.team.reza_name}
-                    text={language.team.reza_career}
-                    cover_color="#f9f1f1"
-                    inside_color="lightgray"
-                    level_q={language.team.level}
-                    level={language.team.reza_level}
-                    experience_q={language.team.experience}
-                    experience={'10'}
-                    projects_q={language.team.projects}
-                    projects={'50'}
-                    back_text1={language.team.work}
-                    back_text2={language.team.follow}
-                />
+            <motion.h1 className="font-bold text-[2rem]" style={{opacity: h3Opacity}}>{language.links.team}</motion.h1>
+            <div className="team_container_sub">
+                <div className="card_container">
+                    <Profile_3d
+                        picture={myPix.src}
+                        title={language.team.reza_name}
+                        text={language.team.reza_career}
+                        cover_color="#f9f1f1"
+                        inside_color="lightgray"
+                        level_q={language.team.level}
+                        level={language.team.reza_level}
+                        experience_q={language.team.experience}
+                        experience={'10'}
+                        projects_q={language.team.projects}
+                        projects={'50'}
+                        back_text1={language.team.work}
+                        back_text2={language.team.follow}
+                    />
+                </div>
+                <div className="card_container">
+                    <Profile_3d
+                        picture={female}
+                        title={language.team.mitra_name}
+                        text={language.team.mitra_career}
+                        cover_color="#f9f1f1"
+                        inside_color="lightgray"
+                        level_q={language.team.level}
+                        level={language.team.mitra_level}
+                        experience_q={language.team.experience}
+                        experience={'5'}
+                        projects_q={language.team.projects}
+                        projects={'20'}
+                        back_text1={language.team.work}
+                        back_text2={language.team.follow}
+                    />
+                </div>
+                <div className="card_container">
+                    <Profile_3d
+                        picture={male}
+                        title={language.team.farhad_name}
+                        text={language.team.farhad_career}
+                        cover_color="#f9f1f1"
+                        inside_color="lightgray"
+                        level_q={language.team.level}
+                        level={language.team.farhad_level}
+                        experience_q={language.team.experience}
+                        experience={'1'}
+                        projects_q={language.team.projects}
+                        projects={'5'}
+                        back_text1={language.team.work}
+                        back_text2={language.team.follow}
+                    />
+                </div>
+                {device !== '' && <div className="card_container">
+                    <Profile_3d
+                        picture={boss}
+                        title={language.team.boss_name}
+                        text={language.team.boss_career}
+                        cover_color="#f9f1f1"
+                        inside_color="lightgray"
+                        level_q={language.team.level}
+                        level={language.team.boss_level}
+                        experience_q={language.team.experience}
+                        experience={'20'}
+                        projects_q={language.team.projects}
+                        projects={'5'}
+                        back_text1={language.team.work}
+                        back_text2={language.team.follow}
+                    />
+                </div>}
             </div>
-            <div className="card_container">
-                <Profile_3d
-                    picture={female}
-                    title={language.team.mitra_name}
-                    text={language.team.mitra_career}
-                    cover_color="#f9f1f1"
-                    inside_color="lightgray"
-                    level_q={language.team.level}
-                    level={language.team.mitra_level}
-                    experience_q={language.team.experience}
-                    experience={'5'}
-                    projects_q={language.team.projects}
-                    projects={'20'}
-                    back_text1={language.team.work}
-                    back_text2={language.team.follow}
-                />
-            </div>
-            <div className="card_container">
-                <Profile_3d
-                    picture={male}
-                    title={language.team.farhad_name}
-                    text={language.team.farhad_career}
-                    cover_color="#f9f1f1"
-                    inside_color="lightgray"
-                    level_q={language.team.level}
-                    level={language.team.farhad_level}
-                    experience_q={language.team.experience}
-                    experience={'1'}
-                    projects_q={language.team.projects}
-                    projects={'5'}
-                    back_text1={language.team.work}
-                    back_text2={language.team.follow}
-                />
-            </div>
-            {device === 'Mobile' && <div className="card_container">
-                <Profile_3d
-                    picture={boss}
-                    title={language.team.boss_name}
-                    text={language.team.boss_career}
-                    cover_color="#f9f1f1"
-                    inside_color="lightgray"
-                    level_q={language.team.level}
-                    level={language.team.boss_level}
-                    experience_q={language.team.experience}
-                    experience={'20'}
-                    projects_q={language.team.projects}
-                    projects={'5'}
-                    back_text1={language.team.work}
-                    back_text2={language.team.follow}
-                />
-            </div>}
         </motion.div>
     );
 }

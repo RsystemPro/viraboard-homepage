@@ -24,6 +24,7 @@ function Overview({ language: lang }: props) {
     const container = useRef<HTMLDivElement>(null)
     const dispatch = useAppDispatch()
     const [trY, setTrY] = useState(0)
+    const [h3Opacity, seth3Opacity] = useState<number>(0)
     const language = lang === "En" ? En : Fa
 
     const { scrollYProgress } = useScroll({
@@ -33,6 +34,7 @@ function Overview({ language: lang }: props) {
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         const value = scrollYProgress.get()
+        seth3Opacity(value * 2)
         if (value > .4 && value < 0.6) {
             dispatch(setNavbar('overview'))
         }
@@ -42,6 +44,7 @@ function Overview({ language: lang }: props) {
 
     return (
         <div ref={container} className="overview_container">
+            <motion.h1 className="font-bold text-[2rem]" style={{ opacity: h3Opacity }}>{language.links.overview}</motion.h1>
             <div className="overview_container_sub">
                 <TW_Carousel>
                     <Carousel_items direction={lang === 'En' ? 'ltr' : 'rtl'} image={cloud} title={language.overview.cloud_title} text={language.overview.cloud_text} />

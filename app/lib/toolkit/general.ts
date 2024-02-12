@@ -8,13 +8,16 @@ interface IS {
     dashboard: string
     language: lang
     navbar: nav
+    loading: boolean
 }
 
 const initialState: IS = {
     server: "http://192.168.43.180:3001",
-    dashboard: "https://eboard-dashboard.vercel.app",
+    // dashboard: "https://eboard-dashboard.vercel.app",
+    dashboard: "https://eboard-dashboard.liara.run",
     language: null,
-    navbar: 'introduction'
+    navbar: 'introduction',
+    loading: true
 }
 
 export const general = createSlice({
@@ -39,8 +42,11 @@ export const general = createSlice({
         setNavbar: (state: IS, action: PayloadAction<nav>) => {
             state.navbar = action.payload
         },
+        setLoading: (state: IS, action: PayloadAction<boolean>) => {
+            state.loading = action.payload
+        },
     }
 })
 
-export const { setLanguage, checkLanguage, setNavbar } = general.actions
+export const { setLanguage, checkLanguage, setNavbar, setLoading } = general.actions
 export default general.reducer

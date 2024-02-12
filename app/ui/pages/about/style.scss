@@ -60,6 +60,8 @@
     }
 
     @include Mobile {
+    margin-top: 10vh;
+
         padding: 1rem;
         flex-direction: column;
         gap: .5rem;

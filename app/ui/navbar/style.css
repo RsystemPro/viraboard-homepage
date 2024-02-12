@@ -29,6 +29,8 @@
 .navbar_container_mobile .ncm_logo #ncm_menu {
   background-color: lightgray;
   border-radius: 100%;
+  width: 3rem;
+  height: 3rem;
 }
 .navbar_container_mobile .ncm_logo div:nth-of-type(1) {
   transition: all 1s;
@@ -54,8 +56,8 @@
   white-space: nowrap;
 }
 .navbar_container_mobile .ncm_logo div:nth-of-type(2) img {
-  width: 60px;
-  height: 60px;
+  width: 4rem;
+  height: 4rem;
 }
 .navbar_container_mobile .ncm_items {
   display: flex;
@@ -99,6 +101,8 @@
   align-items: center;
   white-space: nowrap;
   margin-inline-end: 20px;
+  gap: 0.5rem;
+  font-family: vazirmatn;
 }
 .navbar_logo h3 {
   font-weight: 800;
@@ -120,6 +124,7 @@
   min-width: 10%;
 }
 .navbar_links_container button {
+  font-family: vazirmatn;
   position: relative;
   font-weight: 700;
   cursor: pointer;

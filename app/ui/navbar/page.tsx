@@ -135,11 +135,11 @@ function Navbar({ language }: any) {
         return (
             <div ref={containerp} className='navbar_container_mobile'>
                 <div className='ncm_logo'>
-                    <div ref={container_logo}>
-                        <Image alt='navbar_logo' src={logo} />
-                        <h3>{lang.links.logo}</h3>
-                    </div>
                     <Image id='ncm_menu' onClick={Open} alt='navbar_logo' src={menu} />
+                    <div ref={container_logo}>
+                        <h3>{lang.links.logo}</h3>
+                        <Image alt='navbar_logo' src={logo} />
+                    </div>
                 </div>
                 <div ref={container_items} onClick={Open} className='ncm_items'>
                     <button id='introduction' onClick={SpanMover}>

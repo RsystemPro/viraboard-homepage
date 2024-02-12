@@ -10,6 +10,7 @@ import { useAppDispatch } from '@/app/lib/toolkit/tsHook';
 import { setNavbar } from '@/app/lib/toolkit/general';
 import background_wave from './icons/top waves.png'
 import Image from 'next/image';
+import Logo_Loading from '../../components/loading/page';
 
 interface props {
     language: language
@@ -40,6 +41,7 @@ function Introductions({ language }: props) {
 
     return (
         <div ref={container} id='Test2' className='introduction_container'>
+            {!imageLoaded && <Logo_Loading language={language} />}
             <Image src={background_wave} alt='back_wave' id='ic_bw' />
             {imageLoaded && <Explains scroll={scrollYProgress} lang={language} />}
             <Board scroll={scrollYProgress} lang={language} setImageLoaded={setImageLoaded} />

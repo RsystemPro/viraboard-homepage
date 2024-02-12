@@ -8,6 +8,7 @@ import Overview from "./ui/pages/overview/page";
 import Team from "./ui/pages/team/page";
 import About from "./ui/pages/about/page";
 import End from "./ui/pages/end/page";
+import Logo_Loading from "./ui/components/loading/page";
 
 export default async function HomePage() {
 
@@ -16,7 +17,6 @@ export default async function HomePage() {
   return (
     <>
       <Navbar language={lang} />
-
       <Introductions language={lang} />
       <Features language={lang} />
       <Overview language={lang} />

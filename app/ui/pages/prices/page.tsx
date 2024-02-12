@@ -24,6 +24,7 @@ function Prices({ language: lang }: props) {
     const dispatch = useAppDispatch()
     const [trY, setTrY] = useState(0)
     const [device, setDevice] = useState<any>()
+    const [h3Opacity, seth3Opacity] = useState<number>(0)
     const language = lang === "En" ? En : Fa
 
     useEffect(() => {
@@ -43,6 +44,7 @@ function Prices({ language: lang }: props) {
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         const value = scrollYProgress.get()
+        seth3Opacity(value * 2)
         if (value > .4 && value < 0.6) {
             dispatch(setNavbar('prices'))
         }
@@ -52,81 +54,84 @@ function Prices({ language: lang }: props) {
 
     return (
         <motion.div ref={container} className="prices_container">
-            <div className="card_container">
-                <Card_3d
-                    className="cards_transformY"
-                    style={{ transform: `rotateY(${trY}deg) rotateX(15deg)` }}
-                    cover_color="#e5d0ff"
-                    inside_color="#f4ecff"
-                    picture={heart_svg}
-                    type={language.prices.type_free}
-                    price={language.prices.type_free}
-                    options={[language.prices.option1 + ' : ' + language.prices.yes,
-                    language.prices.option2 + ' : ' + language.prices.no,
-                    language.prices.option3 + ' : 50mb',
-                    language.prices.option4 + ' : 20',
-                    ]
-                    }
-                    buttonText={language.prices.free_btn}
-                />
+            <motion.h1 className="font-bold text-[2rem]" style={{ opacity: h3Opacity }}>{language.links.prices}</motion.h1>
+            <div className="prices_container_sub">
+                <div className="card_container">
+                    <Card_3d
+                        className="cards_transformY"
+                        style={{ transform: `rotateY(${trY}deg) rotateX(15deg)` }}
+                        cover_color="#e5d0ff"
+                        inside_color="#f4ecff"
+                        picture={heart_svg}
+                        type={language.prices.type_free}
+                        price={language.prices.type_free}
+                        options={[language.prices.option1 + ' : ' + language.prices.yes,
+                        language.prices.option2 + ' : ' + language.prices.no,
+                        language.prices.option3 + ' : 50mb',
+                        language.prices.option4 + ' : 20',
+                        ]
+                        }
+                        buttonText={language.prices.free_btn}
+                    />
+                </div>
+                <div className="card_container">
+                    <Card_3d
+                        className="cards_transformY"
+                        style={{ transform: `rotateY(${trY}deg)  rotateX(15deg)` }}
+                        hoverStyles={{ transform: 'rotateX(15deg)' }}
+                        cover_color="#71c7ec"
+                        inside_color="#c6e8f7"
+                        picture={board_svg}
+                        type={language.prices.type_basic}
+                        price={'5000 ' + language.prices.price}
+                        options={[language.prices.option1 + ' : ' + language.prices.yes,
+                        language.prices.option2 + ' : ' + language.prices.yes,
+                        language.prices.option3 + ' : 500mb',
+                        language.prices.option4 + ' : 100',
+                        ]
+                        }
+                        buttonText={language.prices.buy_btn}
+                    />
+                </div>
+                <div className="card_container">
+                    <Card_3d
+                        className="button_anim_glowing cards_transformY"
+                        style={{ transform: `rotateY(${trY}deg) rotateX(15deg)` }}
+                        hoverStyles={{ transform: 'rotateY(-15deg) rotateX(15deg)' }}
+                        cover_color="#ffdc73"
+                        inside_color="#fff3b2"
+                        picture={board_advance_svg}
+                        type={language.prices.type_premium}
+                        price={'20000 ' + language.prices.price}
+                        options={[language.prices.option1 + ' : ' + language.prices.yes,
+                        language.prices.option2 + ' : ' + language.prices.yes,
+                        language.prices.option3 + ' : ' + language.prices.unlimit,
+                        language.prices.option4 + ' : 200',
+                        ]
+                        }
+                        buttonText={language.prices.buy_btn}
+                    />
+                </div>
+                {device !== '' && <div className="card_container">
+                    <Card_3d
+                        className="cards_transformY"
+                        style={{ transform: `rotateY(${trY}deg) rotateX(15deg)` }}
+                        hoverStyles={{ transform: 'rotateY(-15deg) rotateX(15deg)' }}
+                        cover_color="#ffdc73"
+                        inside_color="#fff3b2"
+                        picture={board_advance_svg}
+                        type={language.prices.type_premium}
+                        price={'25000 ' + language.prices.price}
+                        options={[language.prices.option1 + ' : ' + language.prices.yes,
+                        language.prices.option2 + ' : ' + language.prices.yes,
+                        language.prices.option3 + ' : ' + language.prices.unlimit,
+                        language.prices.option4 + ' : ' + language.prices.unlimit,
+                        ]
+                        }
+                        buttonText={language.prices.buy_btn}
+                    />
+                </div>}
             </div>
-            <div className="card_container">
-                <Card_3d
-                    className="cards_transformY"
-                    style={{ transform: `rotateY(${trY}deg)  rotateX(15deg)` }}
-                    hoverStyles={{ transform: 'rotateX(15deg)' }}
-                    cover_color="#71c7ec"
-                    inside_color="#c6e8f7"
-                    picture={board_svg}
-                    type={language.prices.type_basic}
-                    price={'5000 ' + language.prices.price}
-                    options={[language.prices.option1 + ' : ' + language.prices.yes,
-                    language.prices.option2 + ' : ' + language.prices.yes,
-                    language.prices.option3 + ' : 500mb',
-                    language.prices.option4 + ' : 100',
-                    ]
-                    }
-                    buttonText={language.prices.buy_btn}
-                />
-            </div>
-            <div className="card_container">
-                <Card_3d
-                    className="button_anim_glowing cards_transformY"
-                    style={{ transform: `rotateY(${trY}deg) rotateX(15deg)` }}
-                    hoverStyles={{ transform: 'rotateY(-15deg) rotateX(15deg)' }}
-                    cover_color="#ffdc73"
-                    inside_color="#fff3b2"
-                    picture={board_advance_svg}
-                    type={language.prices.type_premium}
-                    price={'20000 ' + language.prices.price}
-                    options={[language.prices.option1 + ' : ' + language.prices.yes,
-                    language.prices.option2 + ' : ' + language.prices.yes,
-                    language.prices.option3 + ' : ' + language.prices.unlimit,
-                    language.prices.option4 + ' : 200',
-                    ]
-                    }
-                    buttonText={language.prices.buy_btn}
-                />
-            </div>
-            {device === 'Mobile' && <div className="card_container">
-                <Card_3d
-                    className="cards_transformY"
-                    style={{ transform: `rotateY(${trY}deg) rotateX(15deg)` }}
-                    hoverStyles={{ transform: 'rotateY(-15deg) rotateX(15deg)' }}
-                    cover_color="#ffdc73"
-                    inside_color="#fff3b2"
-                    picture={board_advance_svg}
-                    type={language.prices.type_premium}
-                    price={'25000 ' + language.prices.price}
-                    options={[language.prices.option1 + ' : ' + language.prices.yes,
-                    language.prices.option2 + ' : ' + language.prices.yes,
-                    language.prices.option3 + ' : ' + language.prices.unlimit,
-                    language.prices.option4 + ' : ' + language.prices.unlimit,
-                    ]
-                    }
-                    buttonText={language.prices.buy_btn}
-                />
-            </div>}
         </motion.div>
     );
 }
