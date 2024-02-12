@@ -17,12 +17,14 @@
     padding-top: 10vh;
   }
 }
-.introduction_container #ic_bw {
+
+#ic_bw {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   height: 40vh;
+  width: 100%;
 }
 
 #Test {
