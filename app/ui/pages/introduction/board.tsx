@@ -105,11 +105,12 @@ function Board({ scroll, lang, setImageLoaded }: props) {
                 className='board_container'
             >
                 <div className='board_image_container'>
-                    <Image
+                    <img src={pic.src} alt="pic" onLoad={() => setImageL(true)} />
+                    {/* <Image
                         onLoad={() => setImageL(true)}
                         src={pic}
                         alt='pic'
-                    />
+                    /> */}
                 </div>
 
                 <span></span>

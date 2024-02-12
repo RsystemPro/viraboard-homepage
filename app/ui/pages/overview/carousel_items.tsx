@@ -18,7 +18,8 @@ function Carousel_items({ image, text, title, direction = 'rtl' }: props) {
                 <h2 style={{ fontFamily: direction === 'rtl' ? 'vazirmatn' : 'sans-serif auto' }}>{text}</h2>
             </div>
             <div>
-                <Image src={image} alt="carousel_image" />
+                {/* <Image src={image} alt="carousel_image" /> */}
+                <img src={image.src} alt="carousel_image" />
             </div>
         </div>
     );

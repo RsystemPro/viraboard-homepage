@@ -42,7 +42,8 @@ function Introductions({ language }: any) {
     return (
         <div ref={container} id='Test2' className='introduction_container'>
             {!imageLoaded && <Logo_Loading language={language} />}
-            <Image src={background_wave} alt='back_wave' id='ic_bw' />
+            {/* <Image src={background_wave} alt='back_wave' id='ic_bw' /> */}
+            <img src={background_wave.src} alt='back_wave' id='ic_bw' />
             {imageLoaded && <Explains scroll={scrollYProgress} lang={language} />}
             <Board scroll={scrollYProgress} lang={language} setImageLoaded={setImageLoaded} />
         </div>

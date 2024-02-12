@@ -42,7 +42,8 @@ function End({ language: lang }: any) {
 
     return (
         <div ref={container} className="end_container">
-            <Image src={bottom_wave} alt='bottom_wave' />
+            {/* <Image src={bottom_wave} alt='bottom_wave' /> */}
+            <img src={bottom_wave.src} alt="bottom_wave" />
             <div className="end_social">
                 <h1>{language.end.contact_us_social}</h1>
                 <div>
