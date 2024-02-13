@@ -17,8 +17,7 @@
     padding-top: 10vh;
   }
 }
-
-#ic_bw {
+.introduction_container #ic_bw {
   position: absolute;
   left: 0;
   right: 0;

@@ -95,7 +95,8 @@ function Board({ scroll, lang, setImageLoaded }: props) {
             ref={picture_container}
         >
 
-            {<motion.div ref={container}
+            {<motion.div
+                ref={container}
                 onMouseMove={MouseOver}
                 onMouseLeave={MouseLeave}
                 style={{
@@ -105,12 +106,12 @@ function Board({ scroll, lang, setImageLoaded }: props) {
                 className='board_container'
             >
                 <div className='board_image_container'>
-                    <img src={pic.src} alt="pic" onLoad={() => setImageL(true)} />
-                    {/* <Image
+                    <motion.img src={pic.src} alt="pic" onLoad={() => setImageL(true)} />
+                    {/* {<Image
                         onLoad={() => setImageL(true)}
                         src={pic}
                         alt='pic'
-                    /> */}
+                    />} */}
                 </div>
 
                 <span></span>
