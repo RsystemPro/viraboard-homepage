@@ -24,7 +24,6 @@ function Board({ scroll, lang, setImageLoaded }: props) {
     const [scale, setScale] = useState<number>()
 
     useMotionValueEvent(scroll, "change", (latest) => {
-        if (!imageL) return
         const value = scroll.get()
 
         const calcY = Math.ceil(+value * 90 / 1)
@@ -100,8 +99,7 @@ function Board({ scroll, lang, setImageLoaded }: props) {
                 onMouseMove={MouseOver}
                 onMouseLeave={MouseLeave}
                 style={{
-                    transform: `perspective(700px) rotateY(${rotatYy}) rotateX(${rotatXx}) scale(${scale})`,
-                    // opacity: scroll,
+                    transform: `perspective(700px) rotateY(${rotatYy}) rotateX(${rotatXx}) scale(${scale})`
                 }}
                 className='board_container'
             >
