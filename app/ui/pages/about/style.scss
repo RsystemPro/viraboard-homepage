@@ -41,6 +41,7 @@
         }
 
         a {
+            direction: ltr;
             text-decoration: underline;
             color: rgb(0, 89, 255);
             cursor: pointer;
@@ -60,7 +61,7 @@
     }
 
     @include Mobile {
-    margin-top: 10vh;
+        margin-top: 10vh;
 
         padding: 1rem;
         flex-direction: column;

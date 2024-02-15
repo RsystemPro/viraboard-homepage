@@ -48,6 +48,7 @@
   text-align: start;
 }
 .about_container div a {
+  direction: ltr;
   text-decoration: underline;
   color: rgb(0, 89, 255);
   cursor: pointer;

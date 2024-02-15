@@ -55,6 +55,8 @@ const Fa = {
     contact_social: 'ارتباط با ما از طریق شبکه های اجتماعی',
     telegram: 'تلگرام',
     whatsapp: 'واتس اپ',
+    email: 'ایمیل',
+    contact_email: 'ارتباط با ما از طریق ایمیل',
     contact_phone: 'ارتباط با ما از طریق شماره تلفن',
   },
   end: {

@@ -55,6 +55,8 @@ const En = {
     contact_social: 'Contact us via social medias',
     telegram: 'Telegram',
     whatsapp: 'WhatsApp',
+    email: 'Email',
+    contact_email: 'Contact us via Email',
     contact_phone: 'Contact us via phone numbers',
   },
   end: {
