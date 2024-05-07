@@ -1,11 +1,13 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { Change_Link_Entirely, getCookie } from '../_tools/tools';
 
 type lang = 'En' | 'Fa' | null
 export type nav = 'introduction' | 'features' | 'overview' | 'prices' | 'team' | 'about'
 
 interface IS {
     server: string
-    dashboard: string
+    dashboard_vercel: string
+    dashboard_liara: string
     language: lang
     navbar: nav
     loading: boolean
@@ -13,8 +15,8 @@ interface IS {
 
 const initialState: IS = {
     server: "http://192.168.43.180:3001",
-    // dashboard: "https://eboard-dashboard.vercel.app",
-    dashboard: "https://eboard-dashboard.liara.run",
+    dashboard_vercel: "https://eboard-dashboard.vercel.app",
+    dashboard_liara: "https://eboard-dashboard.liara.run",
     language: null,
     navbar: 'introduction',
     loading: true
@@ -45,8 +47,13 @@ export const general = createSlice({
         setLoading: (state: IS, action: PayloadAction<boolean>) => {
             state.loading = action.payload
         },
+        Dashboard_Link(state: IS) {
+            const myHost_cookie = getCookie('host')
+            const myHost = myHost_cookie.includes('.vercel.app') ? state.dashboard_vercel : state.dashboard_liara;
+            Change_Link_Entirely(myHost);
+        }
     }
 })
 
-export const { setLanguage, checkLanguage, setNavbar, setLoading } = general.actions
+export const { setLanguage, checkLanguage, setNavbar, setLoading, Dashboard_Link } = general.actions
 export default general.reducer

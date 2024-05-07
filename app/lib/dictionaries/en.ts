@@ -24,7 +24,7 @@ const En = {
   },
   overview: {
     cloud_title: 'Cloud Storage',
-    cloud_text: 'everything includes pdf, image, voices and ... will save on cloud storage and you dont need to save documents on your device',
+    cloud_text: 'everything includes pdf, image, voices and ... will save on cloud storage and you dont need to save any documents on your device',
     group_title: 'Interaction Board',
     group_text: 'you are able to add your friends or your students for interactive works and eBoard supports chat messages and real time voices, video Conference soon',
     laptop_title: 'Professional Tools',
@@ -61,7 +61,7 @@ const En = {
   },
   end: {
     exolain_title: 'e-Board',
-    exolain_text: 'we use all of our efforts to provide high quality service for you and we get so glad to say your oppinion about us',
+    exolain_text: 'we use all of our efforts to provide high quality service for you and we get so glad to hear your oppinion about us',
     quick_access: 'Quick access',
     contact_us: 'Contact us',
     contact_us_address: 'Tehran, Narmak, Farjam',

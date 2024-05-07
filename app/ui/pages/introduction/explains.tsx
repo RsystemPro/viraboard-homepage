@@ -5,8 +5,9 @@ import Anim_Button from "../../components/buttons/page";
 import En from '@/app/lib/dictionaries/en'
 import Fa from '@/app/lib/dictionaries/fa'
 import { MotionValue, motion } from "framer-motion"
-import { Change_Link, Change_Link_Entirely } from "@/app/lib/_tools/tools";
-import { useAppSelector } from "@/app/lib/toolkit/tsHook";
+import { Change_Link, Change_Link_Entirely, getCookie } from "@/app/lib/_tools/tools";
+import { useAppDispatch, useAppSelector } from "@/app/lib/toolkit/tsHook";
+import { Dashboard_Link } from "@/app/lib/toolkit/general";
 
 interface props {
     lang: language
@@ -15,10 +16,10 @@ interface props {
 
 function Explains({ scroll, lang }: props) {
 
+    const dispatch = useAppDispatch()
     const header = useRef<HTMLHeadingElement>(null)
     const text = useRef<HTMLHeadingElement>(null)
     const container = useRef<HTMLDivElement>(null)
-    const dashboard = useAppSelector(state => state.general.dashboard)
     const language = lang === "En" ? En : Fa
 
     useEffect(() => {
@@ -33,7 +34,7 @@ function Explains({ scroll, lang }: props) {
     }, [])
 
     function Click(x: React.MouseEvent) {
-        Change_Link_Entirely(dashboard)
+        dispatch(Dashboard_Link())
     }
 
     return (

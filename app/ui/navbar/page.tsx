@@ -10,7 +10,7 @@ import { Change_Link, Change_Link_Entirely, getCookie, setCookie } from '@/app/l
 import { useRouter } from 'next/navigation'
 import { NextResponse } from 'next/server'
 import { useAppDispatch, useAppSelector } from '@/app/lib/toolkit/tsHook'
-import { checkLanguage, nav, setNavbar } from '@/app/lib/toolkit/general'
+import { Dashboard_Link, checkLanguage, nav, setNavbar } from '@/app/lib/toolkit/general'
 import PagesLayout from '@/app/ui/layouts/pagesLayout'
 import menu from './icons/menu.svg'
 
@@ -20,7 +20,6 @@ function Navbar({ language }: any) {
     const span = useRef<HTMLSpanElement>(null)
     const buttons_container = useRef<HTMLDivElement>(null)
     const nav = useAppSelector(state => state.general.navbar)
-    const dashboard = useAppSelector(state => state.general.dashboard)
     const dispatch = useAppDispatch()
     const container = useRef<HTMLDivElement>(null)
 
@@ -165,7 +164,7 @@ function Navbar({ language }: any) {
                     </button>
                     <span ref={span}></span>
                     <div>
-                        <button onClick={() => Change_Link_Entirely(dashboard)} id='login' className='navbar_links_login'>
+                        <button onClick={() => dispatch(Dashboard_Link())} id='login' className='navbar_links_login'>
                             {lang.links.login}
                         </button>
                     </div>
@@ -206,7 +205,7 @@ function Navbar({ language }: any) {
                     </button>
                     <span ref={span}></span>
                     <div>
-                        <button onClick={() => Change_Link_Entirely(dashboard)} id='login' className='navbar_links_login'>
+                        <button onClick={() => dispatch(Dashboard_Link())} id='login' className='navbar_links_login'>
                             {lang.links.login}
                         </button>
                     </div>
