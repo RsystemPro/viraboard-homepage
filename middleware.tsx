@@ -10,7 +10,7 @@ export function middleware(request: NextRequest) {
     //create cookie
     let lang: language = null
     lang = request.cookies.get('lang')?.value as language || null
-    if (!lang) lang = 'Fa';
+    if (!lang) lang = host.includes('.liara.run') ? 'Fa' : 'En';
 
     //create header
     const newRequestHeaders = new Headers(request.headers)
