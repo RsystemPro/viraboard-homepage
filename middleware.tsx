@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
 
     //check host
-    const host = request.url
+    const host = request.nextUrl.origin
 
     //create cookie
     let lang: language = null
