@@ -51,9 +51,14 @@ export function Change_Link(parameter: string) {
     link_el.click()
 }
 
-export function Change_Link_Entirely(parameter: string) {
+export function Change_Link_Entirely(parameter: 'home' | 'dashboard') {
     const link_el = document.createElement('a')
     // link_el.href = parameter.toString()
-    link_el.href = document.location.origin + '/dashboard'
+
+    if (parameter == 'home') {
+        link_el.href = document.location.origin
+    } else {
+        link_el.href = document.location.origin + '/dashboard'
+    }
     link_el.click()
 }

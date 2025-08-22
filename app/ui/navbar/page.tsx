@@ -62,7 +62,7 @@ function Navbar({ language }: any) {
         if (textContent === 'language') {
             const chamgeLang = language === 'En' ? 'Fa' : 'En'
             setCookie('lang', chamgeLang, 365)
-            Change_Link_Entirely('/')
+            Change_Link_Entirely('home')
             return
         }
 
