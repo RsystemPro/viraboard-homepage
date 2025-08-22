@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  viraboard-homepage:
+    image: viraboard-homepage-image
+    ports:
+      - "3005:3005"
+    environment:
+      NODE_ENV: pro
+      PORT: 3005
+    networks:
+      - mongo-network
+    container_name: viraboard-homepage-container
+    restart: unless-stopped
+
+networks:
+  mongo-network:
+    external: true

@@ -26,8 +26,11 @@
         grid-template-columns: 50% 50%;
         justify-content: space-between;
         align-items: center;
+        overflow-y: auto;
+        background-color: #CFEDE0;
 
         @include Mobile {
+            height: 90dvh;
             grid-template-columns: 1fr;
             // grid-template-rows: repeat(2, 1fr);
             padding: 1rem;
@@ -43,7 +46,6 @@
             // opacity: 0;
             background-color: #CFEDE0;
             border-radius: 2rem;
-
         }
     }
 }
@@ -74,5 +76,6 @@
         text-align: start;
         font-weight: 300;
         font-family: vazirmatn;
+        font-size: 17px;
     }
 }

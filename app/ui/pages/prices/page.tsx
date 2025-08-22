@@ -65,10 +65,10 @@ function Prices({ language: lang }: any) {
                         picture={heart_svg}
                         type={language.prices.type_free}
                         price={language.prices.type_free}
-                        options={[language.prices.option1 + ' : ' + language.prices.yes,
+                        options={[language.prices.option1 + ' : ' + language.prices.no,
                         language.prices.option2 + ' : ' + language.prices.no,
                         language.prices.option3 + ' : 50mb',
-                        language.prices.option4 + ' : 20',
+                        language.prices.option4 + ' : 10',
                         ]
                         }
                         buttonText={language.prices.free_btn}
@@ -83,11 +83,11 @@ function Prices({ language: lang }: any) {
                         inside_color="#c6e8f7"
                         picture={board_svg}
                         type={language.prices.type_basic}
-                        price={'5000 ' + language.prices.price}
+                        price={'50000 ' + language.prices.price}
                         options={[language.prices.option1 + ' : ' + language.prices.yes,
                         language.prices.option2 + ' : ' + language.prices.yes,
                         language.prices.option3 + ' : 500mb',
-                        language.prices.option4 + ' : 100',
+                        language.prices.option4 + ' : 10',
                         ]
                         }
                         buttonText={language.prices.buy_btn}
@@ -102,11 +102,11 @@ function Prices({ language: lang }: any) {
                         inside_color="#fff3b2"
                         picture={board_advance_svg}
                         type={language.prices.type_premium}
-                        price={'20000 ' + language.prices.price}
+                        price={'200000 ' + language.prices.price}
                         options={[language.prices.option1 + ' : ' + language.prices.yes,
                         language.prices.option2 + ' : ' + language.prices.yes,
                         language.prices.option3 + ' : ' + language.prices.unlimit,
-                        language.prices.option4 + ' : 200',
+                        language.prices.option4 + ' : 50',
                         ]
                         }
                         buttonText={language.prices.buy_btn}
@@ -121,7 +121,7 @@ function Prices({ language: lang }: any) {
                         inside_color="#fff3b2"
                         picture={board_advance_svg}
                         type={language.prices.type_premium}
-                        price={'25000 ' + language.prices.price}
+                        price={'500000 ' + language.prices.price}
                         options={[language.prices.option1 + ' : ' + language.prices.yes,
                         language.prices.option2 + ' : ' + language.prices.yes,
                         language.prices.option3 + ' : ' + language.prices.unlimit,

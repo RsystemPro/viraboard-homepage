@@ -11,8 +11,8 @@ import PagesLayout from "./ui/layouts/pagesLayout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "e-Board",
-  description: "Online Board",
+  title: "ViraBoard",
+  description: "Online electronic board",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

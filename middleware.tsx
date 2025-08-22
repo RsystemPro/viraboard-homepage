@@ -6,13 +6,11 @@ export function middleware(request: NextRequest) {
 
     //check host
     const host = request.nextUrl.origin
-    console.log(host);
 
     //create cookie
     let lang: language = null
     lang = request.cookies.get('lang')?.value as language || null
     if (!lang) lang = host.includes('.vercel.app') ? 'En' : 'Fa';
-    console.log(lang);
 
     //create header
     const newRequestHeaders = new Headers(request.headers)

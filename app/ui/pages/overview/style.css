@@ -1,7 +1,6 @@
 .overview_container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   padding: 3rem;
@@ -51,8 +50,14 @@
   font-weight: bolder;
   text-align: center;
 }
+@media screen and (max-width: 576px) {
+  .carousel_item div:nth-of-type(1) h1 {
+    font-size: 1rem;
+    text-decoration: underline;
+  }
+}
 .carousel_item div:nth-of-type(1) h2 {
-  font-size: 1rem;
+  font-size: 17px;
   font-weight: bold;
   text-align: center;
 }
@@ -73,4 +78,18 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.btnDoc {
+  transition: background-color 0.3s ease;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.btnDoc:hover {
+  background-color: rgb(0, 88.4938271605, 192);
 }

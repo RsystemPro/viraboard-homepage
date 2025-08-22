@@ -23,9 +23,12 @@
   grid-template-columns: 50% 50%;
   justify-content: space-between;
   align-items: center;
+  overflow-y: auto;
+  background-color: #CFEDE0;
 }
 @media screen and (max-width: 576px) {
   .features_container .features_container_sub {
+    height: 90dvh;
     grid-template-columns: 1fr;
     padding: 1rem;
   }
@@ -56,4 +59,5 @@
   text-align: start;
   font-weight: 300;
   font-family: vazirmatn;
+  font-size: 17px;
 }

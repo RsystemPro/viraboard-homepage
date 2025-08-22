@@ -1,3 +1,4 @@
+'use client'
 
 export function getCookie(name: string): any | null {
     const cDecoded = decodeURIComponent(document.cookie);
@@ -14,9 +15,9 @@ export function getCookie(name: string): any | null {
     return result;
 }
 
-export function setCookie(name:string, value: string, daysToLive:number){
+export function setCookie(name: string, value: string, daysToLive: number) {
     const date = new Date();
-    date.setTime(date.getTime() +  (daysToLive * 24 * 60 * 60 * 1000));
+    date.setTime(date.getTime() + (daysToLive * 24 * 60 * 60 * 1000));
     let expires = "expires=" + date.toUTCString();
     document.cookie = `${name}=${value}; ${expires}; path=/`
 }
@@ -52,6 +53,7 @@ export function Change_Link(parameter: string) {
 
 export function Change_Link_Entirely(parameter: string) {
     const link_el = document.createElement('a')
-    link_el.href = parameter.toString()
+    // link_el.href = parameter.toString()
+    link_el.href = document.location.origin + '/dashboard'
     link_el.click()
 }

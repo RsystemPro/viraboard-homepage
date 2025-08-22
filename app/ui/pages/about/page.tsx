@@ -44,14 +44,14 @@ function About({ language: lang }: any) {
                 <h2>{language.contact.telegram}</h2>
                 <a href="tg://resolve?domain=mrsmh96">@mrsmh96</a>
                 <h2>{language.contact.whatsapp}</h2>
-                <a href="https://wa.me/+989216897005">09216897005</a>
+                <a href="https://wa.me/+989105088036">09105088036</a>
 
                 <h1>{language.contact.contact_email}</h1>
                 <a href="mailto:rsystempro@gmail.com">rsystempro@gmail.com</a>
 
                 <h1>{language.contact.contact_phone}</h1>
-                <a href="tel:+989216897005">09216897005</a>
                 <a href="tel:+989105088036">09105088036</a>
+                <a href="tel:+989216897005">09216897005</a>
             </div>
             <Image src={contactUs_pic} alt='contactUs' />
         </div>
