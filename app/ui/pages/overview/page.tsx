@@ -14,6 +14,7 @@ import cloud from './icons/cloud.png';
 import mobile from './icons/mobile.png';
 import group from './icons/Work chat-amico.svg';
 import laptop from './icons/Picture1.png';
+import pitchDeck from './icons/Picture3.png';
 
 interface props {
     language: language
@@ -54,6 +55,7 @@ function Overview({ language: lang }: any) {
             <div className="overview_container_sub">
                 <TW_Carousel direction={lang === 'En' ? 'ltr' : 'rtl'} autoplay={autoplay}>
                     <Carousel_items btnVideoText={language.overview.vidBtn} videoLink={currentHost + "vira_introduction.mp4"} direction={lang === 'En' ? 'ltr' : 'rtl'} image={mobile} title={language.overview.mobile_title} text={language.overview.mobile_text} videoCallback={() => setAutoplay(false)} />
+                    <Carousel_items btnLink={currentHost + "Vira-PitchDeck.pptx"} btnText={language.overview.docBtn} direction={lang === 'En' ? 'ltr' : 'rtl'} image={pitchDeck} title={language.overview.pitchDeck_title} text={language.overview.pitchDeck_text} />
                     <Carousel_items btnLink={currentHost + "vira-infrastructure.docx"} btnText={language.overview.docBtn} direction={lang === 'En' ? 'ltr' : 'rtl'} image={laptop} title={language.overview.laptop_title} text={language.overview.laptop_text} />
                     <Carousel_items btnLink={currentHost + "vira-features.docx"} btnText={language.overview.docBtn} direction={lang === 'En' ? 'ltr' : 'rtl'} image={group} title={language.overview.group_title} text={language.overview.group_text} />
                     <Carousel_items btnLink={currentHost + "vira-rtp.docx"} btnText={language.overview.docBtn} direction={lang === 'En' ? 'ltr' : 'rtl'} image={cloud} title={language.overview.cloud_title} text={language.overview.cloud_text} />

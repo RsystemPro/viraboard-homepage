@@ -31,6 +31,8 @@ const En = {
     "laptop_text": "This document provides a brief introduction to the website’s structure, including the whiteboard, dashboard, and underlying infrastructure.",
     "mobile_title": "Site Introduction & Class Creation Tutorial",
     "mobile_text": "This video offers a general overview of the site’s features to help users understand its functionality. It also guides you through creating and using classes.",
+    "pitchDeck_title": "Viraboard Pitch Deck",
+    "pitchDeck_text": "Pitch Deck for present viraboard platform and business plan",
     "docBtn": "View Document",
     "vidBtn": 'View Video'
   },

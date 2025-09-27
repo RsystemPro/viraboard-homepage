@@ -51,7 +51,7 @@ export function Change_Link(parameter: string) {
     link_el.click()
 }
 
-export function Change_Link_Entirely(parameter: 'home' | 'dashboard') {
+export function Change_Link_Entirely(parameter: any) {
     const link_el = document.createElement('a')
     // link_el.href = parameter.toString()
 
